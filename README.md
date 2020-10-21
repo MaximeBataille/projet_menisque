@@ -2,7 +2,7 @@
 
 
 
-Objectif : Prédire la réussite d'une suture de ménisque
+Objectif : PrÃ©dire la rÃ©ussite d'une suture de mÃ©nisque
 
 
 
@@ -43,10 +43,10 @@ Objectif : Prédire la réussite d'une suture de ménisque
    - ml_model.pkl
 
 ## - Fichiers
-app.py : app, configuration de l'API Flask
-style.css : feuille de style css
-index.html : template html de l'interface
-ml_model.pkl : model sauvegardé et créé sur Notebook KNN.ipynb
+- app.py : app, configuration de l'API Flask
+- style.css : feuille de style css
+- index.html : template html de l'interface
+- ml_model.pkl : model sauvegardÃ© et crÃ©Ã© sur Notebook KNN.ipynb
 
 
 ## - Lancement
@@ -60,7 +60,7 @@ Run avec la commande
 ...Attendre quelques instants
 Copier l'URL http://127.0.0.1:5000/ dans un navigateur
 
-## - Problèmes éventuels
+## - ProblÃ¨mes Ã©ventuels
 
 Ouvrir le fichier app.py et modifier la ligne 8
 ==> model = pickle.load(open('FINAL/ml_model.pkl', 'rb'))
