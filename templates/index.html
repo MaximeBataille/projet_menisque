@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Déploiement</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  <link href="/static/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <div class="split left">
+    <div id = "form" class="login">
+	    <h1>Informations sur le patient</h1>
+
+       <!-- Main Input For Receiving Query to our ML -->
+      <form action="{{ url_for('predict')}}"method="post">
+      	<input type="number" name="age" placeholder="age en année" required="required" /><br>
+  		  <input type="number" name="delais" placeholder="delais en jours" required="required" /><br>
+        <input type="text" name="poids" placeholder="poids en kg" required="required" /><br>
+        <input type="text" name="taille" placeholder="taille en cm" required="required" /><br>
+
+        <h5>Rupture des ligaments (ACL)</h5>
+        <input type="radio" id="oui" name="acl" value="oui" />
+        <label for="oui">Oui</label>
+        <input type="radio" id="non" name="acl" value="non" />
+        <label for="non">Non</label>
+
+        <h5>Anse de Seau</h5>
+        <input type="radio" id="oui" name="anse de seau" value="oui" />
+        <label for="oui">Oui</label>
+        <input type="radio" id="non" name="anse de seau" value="non" />
+        <label for="non">Non</label>
+
+        <h5>Type de rupture</h5>
+        <input type="radio" id="interne" name="type de rupture" value="interne" />
+        <label for="oui">Interne</label><br>
+        <input type="radio" id="externe" name="type de rupture" value="externe" />
+        <label for="non">Externe</label><br>
+        <br>
+        <br>
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Prédire la probabilité de succés de la suture</button>
+        <br>
+        <button type='reset' class="btn btn-primary btn-block btn-large">Annuler</button>
+      </form>
+    </div>
+  </div>
+
+  <div class = "split right">
+    <div class = 'centered'>
+     <br>
+     <br>
+     <h1>Prédiction</h1>
+     <h3 style = 'color : red;'>{{ prediction_text }}</h3>
+
+     <h5>Rappel des informations sur le patient</h5>
+     <p>Age : {{age}} ans</p>
+     <p>Intérieur / Extérieur : {{int_ext}}</p>
+     <p>Délais : {{delais}} jours</p>
+     <p>Rupture des ligaments (ACL) : {{acl}}</p>
+     <p>Anse de Seau : {{anse_seau}}</p>
+     <p>Poids : {{poids}} Kg</p>
+     <p>Taille : {{taille}} cm</p>
+     <p>IMC calculé : {{imc}}</p><br>
+     <p><i>Note : IMC utilisé pour la construction du modèle. Formule = poids (en kg) / taille au carré (en m)</i></p>
+    </div>
+  </div>
+
+</body>
+
+
+
+
+
+
+</html>
