@@ -64,5 +64,5 @@ Copier l'URL http://127.0.0.1:5000/ dans un navigateur
 
 -Ouvrir le fichier app.py et modifier la ligne 8
 - ==> model = pickle.load(open('FINAL/ml_model.pkl', 'rb'))
-- ==> Modifier le chemin 'FINAL/ml_model.pkl' par le chemin completselon l'emplacement du dossier FINAL
+- ==> Modifier le chemin 'FINAL/ml_model.pkl' par le chemin completselon l'emplacement du dossier projet_menisque
 - ==>Sauvegarder !!! 
